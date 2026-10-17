@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Login | Attendance Summary System</title>
+  <meta name="description" content="SBL_WT_grp10 - Student Attendance Summary System login">
+
+  <!-- Fonts, Bootstrap and icons (CDN) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Our styles (theme first) -->
+  <link href="css/theme-colors.css" rel="stylesheet">
+  <link href="css/login-style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Floating theme toggle -->
+  <button id="themeToggle" class="theme-toggle floating-toggle" type="button" aria-label="Toggle dark mode">
+    <i class="bi bi-moon-stars-fill"></i>
+  </button>
+
+  <div class="container-fluid p-0">
+    <div class="row g-0 min-vh-100">
+
+      <!-- ===== Left panel (desktop only) ===== -->
+      <div class="col-lg-6 d-none d-lg-flex brand-panel">
+        <span class="circle circle-1"></span>
+        <span class="circle circle-2"></span>
+        <span class="circle circle-3"></span>
+        <span class="circle circle-4"></span>
+
+        <div class="brand-content fade-up">
+          <div class="brand-icon"><i class="bi bi-mortarboard-fill"></i></div>
+          <h1 class="brand-title">Attendance Summary System</h1>
+          <p class="brand-tagline">Track every lecture, know your 75% status and plan your semester with confidence.</p>
+          <ul class="feature-list">
+            <li><i class="bi bi-check-circle-fill"></i> Subject-wise attendance at a glance</li>
+            <li><i class="bi bi-check-circle-fill"></i> Interactive charts and monthly trends</li>
+            <li><i class="bi bi-check-circle-fill"></i> Smart tips on lectures you need to attend</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ===== Right panel (login card) ===== -->
+      <div class="col-12 col-lg-6 d-flex align-items-center justify-content-center form-panel">
+        <div class="w-100 login-wrap">
+
+          <!-- Compact logo for small screens -->
+          <div class="mobile-logo d-lg-none fade-up">
+            <span class="mobile-logo-icon"><i class="bi bi-mortarboard-fill"></i></span>
+            <span>Attendance Summary</span>
+          </div>
+
+          <div id="loginCard" class="login-card fade-up">
+            <div class="avatar-icon"><i class="bi bi-person-fill"></i></div>
+            <h2 class="login-heading">Student Login</h2>
+            <p class="login-subtitle">Sign in to view your attendance summary</p>
+
+            <!-- Error message (filled with textContent only) -->
+            <div id="loginError" class="alert alert-danger d-none py-2 small" role="alert"></div>
+
+            <form id="loginForm" novalidate>
+              <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-person"></i></span>
+                  <input type="text" id="username" class="form-control" placeholder="e.g. 1111" autocomplete="username">
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label for="password" class="form-label">Password</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                  <input type="password" id="password" class="form-control" placeholder="Enter password" autocomplete="current-password">
+                  <button id="togglePassword" class="btn btn-eye" type="button" aria-label="Show password">
+                    <i class="bi bi-eye"></i>
+                  </button>
+                </div>
+              </div>
+
+              <button id="loginBtn" type="submit" class="btn btn-gradient w-100">
+                <i class="bi bi-box-arrow-in-right me-1"></i> Login
+              </button>
+            </form>
+
+            <!-- Demo accounts -->
+            <div class="demo-box">
+              <p class="demo-title"><i class="bi bi-info-circle-fill"></i> Demo accounts (click to fill)</p>
+              <div class="d-flex flex-wrap gap-2">
+                <button type="button" class="demo-chip" data-user="1111" data-pass="1111">
+                  <i class="bi bi-person-badge"></i> Student 1: 1111 / 1111
+                </button>
+                <button type="button" class="demo-chip" data-user="2222" data-pass="2222">
+                  <i class="bi bi-person-badge"></i> Student 2: 2222 / 2222
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <p class="login-footer">SBL_WT_grp10 | Web Technology 2</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/theme-toggle.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

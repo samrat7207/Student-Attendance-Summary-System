@@ -1,0 +1,218 @@
+/* =========================================================
+   login-style.css
+   Styles for the split-screen login page.
+   ========================================================= */
+
+/* ---------- 1. Floating theme toggle position ---------- */
+.floating-toggle {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 50;
+}
+
+/* ---------- 2. Left brand panel ---------- */
+.brand-panel {
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  color: #fff;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed, #ec4899, #7c3aed, #4f46e5);
+  background-size: 400% 400%;
+  animation: gradientMove 14s ease infinite;
+}
+[data-bs-theme="dark"] .brand-panel {
+  background: linear-gradient(135deg, #312e81, #5b21b6, #9d174d, #5b21b6, #312e81);
+  background-size: 400% 400%;
+}
+
+@keyframes gradientMove {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Translucent floating circles */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  animation: drift 18s ease-in-out infinite;
+}
+.circle-1 { width: 320px; height: 320px; top: -90px; left: -80px; }
+.circle-2 { width: 220px; height: 220px; bottom: -60px; right: -40px; animation-delay: -5s; }
+.circle-3 { width: 120px; height: 120px; top: 22%; right: 12%; animation-delay: -9s; }
+.circle-4 { width: 70px; height: 70px; bottom: 22%; left: 14%; animation-delay: -13s; }
+
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(30px, -25px) scale(1.05); }
+  66%      { transform: translate(-20px, 20px) scale(0.96); }
+}
+
+.brand-content {
+  position: relative;
+  z-index: 1;
+  max-width: 460px;
+}
+.brand-icon {
+  width: 76px;
+  height: 76px;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.3rem;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+  margin-bottom: 28px;
+}
+.brand-title { font-size: 2.4rem; font-weight: 700; line-height: 1.2; }
+.brand-tagline { opacity: 0.9; margin: 14px 0 28px; font-size: 1.02rem; }
+.feature-list { list-style: none; padding: 0; margin: 0; }
+.feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  font-weight: 500;
+}
+.feature-list i { font-size: 1.2rem; color: #bbf7d0; }
+
+/* ---------- 3. Right form panel ---------- */
+.form-panel {
+  padding: 40px 16px;
+  background:
+    radial-gradient(circle at 85% 10%, rgba(124, 58, 237, 0.12), transparent 40%),
+    radial-gradient(circle at 10% 90%, rgba(236, 72, 153, 0.10), transparent 40%),
+    var(--bg);
+}
+.login-wrap { max-width: 430px; }
+
+.mobile-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin-bottom: 22px;
+}
+.mobile-logo-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: var(--hero-gradient);
+}
+
+/* Glass login card */
+.login-card {
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 36px 32px;
+  animation-delay: 0.1s;
+}
+.avatar-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.9rem;
+  color: #fff;
+  background: var(--hero-gradient);
+  box-shadow: 0 10px 24px rgba(124, 58, 237, 0.35);
+}
+.login-heading { text-align: center; font-weight: 700; font-size: 1.6rem; margin-bottom: 4px; }
+.login-subtitle { text-align: center; color: var(--muted); font-size: 0.9rem; margin-bottom: 24px; }
+
+/* Form controls */
+.form-label { font-weight: 500; font-size: 0.88rem; }
+.input-group-text,
+.form-control,
+.btn-eye {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--text);
+}
+.input-group-text { color: var(--muted); border-radius: var(--radius-control) 0 0 var(--radius-control); }
+.input-group > .form-control:last-child,
+.btn-eye { border-radius: 0 var(--radius-control) var(--radius-control) 0 !important; }
+.btn-eye { border: 1px solid var(--border); border-left: 0; color: var(--muted); }
+.btn-eye:hover { color: var(--primary); }
+.form-control { padding: 0.65rem 0.85rem; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem var(--soft-primary);
+  background: var(--surface);
+  color: var(--text);
+}
+
+/* Gradient login button */
+.btn-gradient {
+  border: 0;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.75rem;
+  border-radius: var(--radius-control);
+  background: linear-gradient(135deg, #4f46e5, #7c3aed, #ec4899);
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+.btn-gradient:hover:not(:disabled) {
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(124, 58, 237, 0.4);
+}
+.btn-gradient:disabled { color: #fff; opacity: 0.8; }
+
+/* ---------- 4. Demo box ---------- */
+.demo-box {
+  margin-top: 22px;
+  padding: 14px;
+  border-radius: 12px;
+  background: var(--soft-primary);
+  border: 1px dashed var(--primary);
+}
+.demo-title { font-size: 0.82rem; font-weight: 600; color: var(--primary); margin-bottom: 10px; }
+.demo-chip {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 999px;
+  transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.demo-chip:hover { transform: translateY(-2px); border-color: var(--primary); color: var(--primary); }
+
+.login-footer { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top: 20px; }
+
+/* ---------- 5. Shake animation for wrong login ---------- */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-10px); }
+  40%, 80% { transform: translateX(10px); }
+}
+.login-card.shake { animation: shake 0.45s ease; }
+
+/* ---------- 6. Small screens ---------- */
+@media (max-width: 420px) {
+  .login-card { padding: 28px 20px; }
+  .login-heading { font-size: 1.4rem; }
+}

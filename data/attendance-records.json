@@ -1,0 +1,30 @@
+{
+  "students": [
+    {
+      "username": "1111", "password": "1111",
+      "name": "Aarav Sharma", "rollNo": "CS201", "class": "SE Computer Science",
+      "subjects": [
+        { "name": "Web Technology 2", "attended": 28, "total": 32 },
+        { "name": "Data Structures", "attended": 24, "total": 30 },
+        { "name": "Database Management", "attended": 18, "total": 28 },
+        { "name": "Operating Systems", "attended": 26, "total": 30 },
+        { "name": "Discrete Mathematics", "attended": 20, "total": 29 }
+      ],
+      "trend": [ { "month": "Jul", "percent": 90 }, { "month": "Aug", "percent": 85 },
+                 { "month": "Sep", "percent": 80 }, { "month": "Oct", "percent": 78 } ]
+    },
+    {
+      "username": "2222", "password": "2222",
+      "name": "Priya Patel", "rollNo": "CS202", "class": "SE Computer Science",
+      "subjects": [
+        { "name": "Web Technology 2", "attended": 22, "total": 32 },
+        { "name": "Data Structures", "attended": 29, "total": 30 },
+        { "name": "Database Management", "attended": 25, "total": 28 },
+        { "name": "Operating Systems", "attended": 17, "total": 30 },
+        { "name": "Discrete Mathematics", "attended": 27, "total": 29 }
+      ],
+      "trend": [ { "month": "Jul", "percent": 72 }, { "month": "Aug", "percent": 76 },
+                 { "month": "Sep", "percent": 79 }, { "month": "Oct", "percent": 81 } ]
+    }
+  ]
+}
